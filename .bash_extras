@@ -11,3 +11,5 @@ alias updall='nix flake update --flake "${HOME}/.nixos"'
 alias ass='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519'
 alias lg='lazygit'
 alias dui='lazydocker'
+
+alias top20='nix path-info --recursive --closure-size /run/current-system | sort -nk2 | tail -n 20 | awk '\''{printf "%.1f MiB\t%s\n", $2/1024/1024, $1}'\'''
